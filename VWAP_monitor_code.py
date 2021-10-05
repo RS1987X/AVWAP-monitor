@@ -66,7 +66,13 @@ ytd_avwap = []
 for column in close_prices:
         ytd_avwap.append(ytd_closes[column].dot(ytd_volumes[column])/sum(ytd_volumes[column]))
 
-#calculate anchored VWAPs since year to date 
+#######
+#Output names close to YTD AVWAP
+#######
+        
+        
+        
+#calculate anchored VWAPs since IPO
 ipo_avwap = []
 for column in recent_ipo_closes:
     ipo_avwap.append(recent_ipo_closes[column].dot(recent_ipo_volumes[column])/sum(recent_ipo_volumes[column]))
