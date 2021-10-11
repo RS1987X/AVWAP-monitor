@@ -8,8 +8,6 @@ Created on Tue Oct  5 10:27:32 2021
 
 import yfinance as yf
 import numpy as np
-import operator
-import functools
 import pandas as pd
 
 #download data from yahoo finance
@@ -34,7 +32,7 @@ hist = yf.download('ATCO-A.ST VOLV-B.ST ERIC-B.ST NDA-SE.ST SAND.ST HEXA-B.ST EV
                     ' COOR.ST HNSA.ST NOBINA.ST OEM-B.ST CALTX.ST AQ.ST GARO.ST MSON-B.ST KNOW.ST COLL.ST SVOL-B.ST'
                     ' LEO.ST LIME.ST EOLU-B.ST G5EN.ST CTM.ST EMBRAC-B.ST NOKIA-SEK.ST PCELL.ST PDX.ST HTRO.ST ADAPT.ST'
                     ' HOFI.ST SAVE.ST TOBII.ST READ.ST CLAS-B.ST HM-B.ST ICA.ST LUNE.ST SAS.ST AZA.ST FAG.ST SF.ST'
-                    ' INVE-B.ST INDU-C.ST LUMI.ST', start='2017-01-01', end='2021-10-05')
+                    ' INVE-B.ST INDU-C.ST LUMI.ST', start='2017-01-01', end='2021-10-20')
 # =============================================================================
 
 #=============================================================================
@@ -47,10 +45,9 @@ volumes = hist["Volume"].dropna(how='all').fillna(0)
 #download data for recent IPOs (roughly 6-12 months)
 ipo_hist = yf.download('CINT.ST IDUN-B.ST SLEEP.ST RUG.ST BOAT.ST FG.ST THUNDR.ST OX2.ST ACAST.ST RVRC.ST LINC.ST'
                        ' HEM.ST CS.ST FRACTL.ST SAVE.ST FNOVA-B.ST NPAPER.ST WBGR-B.ST IMP-A-SDB.ST READ.ST VIMIAN.ST'
-                       ' CARY.ST CTEK.ST KJELL.ST DSNO.ST PIERCE.ST STOR-B.ST',start='2020-10-05', end = '2021-10-07')
-
-#STORSKOGEN
-#TRUECALLER
+                       ' CARY.ST CTEK.ST KJELL.ST DSNO.ST PIERCE.ST STOR-B.ST TRUE-B.ST',start='2020-10-05', end = '2021-10-20')
+#byggfakta
+#flatcapital
 
 recent_ipo_closes = ipo_hist["Close"].dropna(how='all').fillna(0)
 recent_ipo_volumes = ipo_hist["Volume"].dropna(how='all').fillna(0)
@@ -69,7 +66,6 @@ for column in close_prices:
 #######
 #Output names close to YTD AVWAP
 #######
-        
         
         
 #calculate anchored VWAPs since IPO
