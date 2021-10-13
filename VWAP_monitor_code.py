@@ -45,7 +45,7 @@ volumes = hist["Volume"].dropna(how='all').fillna(0)
 #download data for recent IPOs (roughly 6-12 months)
 ipo_hist = yf.download('CINT.ST IDUN-B.ST SLEEP.ST RUG.ST BOAT.ST FG.ST THUNDR.ST OX2.ST ACAST.ST RVRC.ST LINC.ST'
                        ' HEM.ST CS.ST FRACTL.ST SAVE.ST FNOVA-B.ST NPAPER.ST WBGR-B.ST IMP-A-SDB.ST READ.ST VIMIAN.ST'
-                       ' CARY.ST CTEK.ST KJELL.ST DSNO.ST PIERCE.ST STOR-B.ST TRUE-B.ST',start='2020-10-05', end = '2021-10-20')
+                       ' CARY.ST CTEK.ST KJELL.ST DSNO.ST PIERCE.ST STOR-B.ST TRUE-B.ST NORB-B.ST',start='2020-10-05', end = '2021-12-31')
 #byggfakta
 #flatcapital
 
